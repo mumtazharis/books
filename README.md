@@ -50,3 +50,28 @@ Soal 10
 ![alt text](images/soal10.gif)
 returnError() hanya menghasilkan Future yang gagal dengan melemparkan error tanpa menangani kesalahan.
 handleError() memanggil returnError() dan menangani error menggunakan try-catch, lalu memperbarui UI dengan setState dan menjalankan tugas cleanup di blok finally.
+
+Soal 11
+![alt text](images/soal11.gif)
+
+Soal 12
+![alt text](images/soal11.gif)
+
+browser
+![alt text](<images/Screenshot 2024-11-22 070652.png>)
+Browser bis mendapat koordinat GPS karena saya memberti izin lokasi pada browser dan laptop saya memiliki GPS
+
+Soal 13
+![alt text](images/soal13.gif)
+Sebelumnya:
+- UI mengandalkan pembaruan manual menggunakan setState untuk mengganti CircularProgressIndicator dengan lokasi ketika data tersedia. 
+- Loading hanya muncul jika kode secara eksplisit diatur untuk memperbarui myPosition.
+
+Sekarang:
+- Menggunakan FutureBuilder, UI secara otomatis diperbarui ketika status Future (dalam hal ini, getPosition()) berubah.
+- Tidak perlu menggunakan setState secara manual untuk mengatur nilai variabel atau memperbarui widget.
+- Loading (CircularProgressIndicator) muncul secara otomatis ketika FutureBuilder mendeteksi bahwa data sedang diproses.
+
+Soal 14
+![alt text](images/soal14.gif)
+Pada kode baru, jika terjadi error selama eksekusi Future (misalnya, jika layanan lokasi dimatikan atau izin lokasi ditolak), error akan terdeteksi melalui snapshot.hasError.
